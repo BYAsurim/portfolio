@@ -1,12 +1,13 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
+import {Link} from "../../../../components/Link";
 
 
 type MenuPropsType = {
     menuItems: string[]
 }
 
-export const Menu: FC<MenuPropsType> = ({
+export const TabMenu: FC<MenuPropsType> = ({
                                             menuItems
                                         }) => {
     return (
@@ -15,9 +16,9 @@ export const Menu: FC<MenuPropsType> = ({
             <ul>
                 {
                     menuItems.map((item, index) => {
-                        return <li key={index}>
-                            <a href="">{item}</a>
-                        </li>
+                        return <ListItem key={index}>
+                            <Link href="">{item}</Link>
+                        </ListItem>
                     })
                 }
             </ul>
@@ -26,8 +27,16 @@ export const Menu: FC<MenuPropsType> = ({
 };
 
 const StyledMenu = styled.nav`
+  
+    margin-bottom: 40px;
     ul {
         display: flex;
-        gap: 30px;
+        justify-content: center;
+        gap: 20px;
     }
 `
+const ListItem = styled.li `
+   
+ 
+`
+
