@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import {Icon} from "../../../../components/icon/Icon";
 import styled from "styled-components";
+import {FlexWrapper} from "../../../../components/FlexWrapper";
 
 
 type SkillPropsType = {
@@ -15,25 +16,46 @@ export const Skill: FC<SkillPropsType> = ({
                                           }) => {
     return (
         <StyledSkill>
-            <Icon iconId={iconId}/>
-            <SkillTitle>{title}</SkillTitle>
-            <SkillText>
-                {children}
-            </SkillText>
+            <FlexWrapper flexDirection={'column'} alignItems={'center'}>
+                <IconWrapper>
+                    <Icon iconId={iconId}/>
+                </IconWrapper>
+                <SkillTitle>{title}</SkillTitle>
+                <SkillText>
+                    {children}
+                </SkillText>
+            </FlexWrapper>
         </StyledSkill>
     );
 };
 
 
 const StyledSkill = styled.div`
-    background-color: #fff;
-    margin: 10px;
-    width: 30%;
+    width: 380px;
+    padding: 62px 20px 40px;
+`
+const IconWrapper = styled.div`
+    position: relative;
+    
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.1);
+        transform: rotate(45deg) translate(-50%, -50%);
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: top left;
+
+    }
 `
 const SkillTitle = styled.h3`
-   
-
+    margin: 70px 0 15px;
+    text-transform: uppercase;
 `
-const SkillText = styled.div`
-
+const SkillText = styled.p`
+    text-align: center;
 `
