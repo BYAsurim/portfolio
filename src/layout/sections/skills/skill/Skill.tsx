@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import {Icon} from "../../../../components/icon/Icon";
 import styled from "styled-components";
 import {FlexWrapper} from "../../../../components/FlexWrapper";
+import {theme} from "../../../../styles/Theme";
 
 
 type SkillPropsType = {
@@ -32,7 +33,11 @@ export const Skill: FC<SkillPropsType> = ({
 
 const StyledSkill = styled.div`
     width: 380px;
+    flex-grow: 1;
     padding: 62px 20px 40px;
+    @media ${theme.media.mobile}{
+        padding: 62px 0 40px;
+    }
 `
 export const IconWrapper = styled.div`
     position: relative;
