@@ -64,7 +64,11 @@ const Name = styled.h2`
     }
 `
 const MainTitle = styled.h1`
-    ${font({Fmax: 27, Fmin: 20})}
+    ${font({Fmax: 27, Fmin: 20})};
+    
+    p{
+        display: none;
+    }
 `
 export const S = {
     Main,
