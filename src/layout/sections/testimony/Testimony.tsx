@@ -8,24 +8,24 @@ import {S} from '../skills/skill/Skill_Styles'
 import {Container} from "../../../components/Container";
 
 
-export const Testimony:React.FC = () => {
+export const Testimony: React.FC = () => {
     return (
         <StyledTestimony>
             <Container>
-            <SectionTitle>Testimony</SectionTitle>
-            <FlexWrapper flexDirection={'column'} alignItems={'center'}>
-                <S.IconWrapper>
-            <Icon iconId={'code'}/>
-                </S.IconWrapper>
-            <Slider/>
-            </FlexWrapper>
+                <SectionTitle>Testimony</SectionTitle>
+                <FlexWrapper flexDirection={'column'} alignItems={'center'}>
+                    <S.IconWrapper>
+                        <Icon iconId={'code'}/>
+                    </S.IconWrapper>
+                    <Slider/>
+                </FlexWrapper>
             </Container>
         </StyledTestimony>
     );
 };
 
 const StyledTestimony = styled.section`
-    ${S.IconWrapper}{
+    ${S.IconWrapper} {
         margin: 40px 0 72px;
     }
 `
