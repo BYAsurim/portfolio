@@ -35,7 +35,7 @@ export const Skills = () => {
     ]
 
     return (
-        <StyledSkills>
+        <StyledSkills id={'Skills'}>
             <Container>
                 <SectionTitle>My skills</SectionTitle>
                 <FlexWrapper flexWrap={'wrap'}>

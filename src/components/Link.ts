@@ -9,6 +9,7 @@ export const Link = styled.a `
     padding:10px;
     position: relative;
     z-index: 0;
+   
     
     &::before {
         content: '';
@@ -20,9 +21,10 @@ export const Link = styled.a `
         bottom: 5px;
         left: 0;
         z-index: -1;
+        height: 0;
+        transition: ${theme.animations.transition};
     }
-
-
+    
     &:hover{
         &::before{
             height: 10px;

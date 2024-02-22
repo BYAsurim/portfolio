@@ -1,18 +1,12 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {Menu} from "../menu/Menu";
 import {S} from '../HeaderMenu_Styles'
 
 
-type MenuPropsType = {
-    menuItems: string[]
-}
-
-export const DesktopMenu: FC<MenuPropsType> = ({
-                                                   menuItems
-                                               }) => {
+export const DesktopMenu: React.FC = () => {
     return (
         <S.DesktopMenu>
-            <Menu menuItems={menuItems}/>
+            <Menu/>
         </S.DesktopMenu>
     );
 };

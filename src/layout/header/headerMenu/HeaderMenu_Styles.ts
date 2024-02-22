@@ -1,5 +1,6 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme";
+import {Link} from "react-scroll";
 
 //desktop
 const DesktopMenu = styled.nav`
@@ -17,6 +18,7 @@ const Mask = styled.span`
     height: 50%;
     overflow-y: hidden;
     color: ${theme.colors.accent};
+    transition: ${theme.animations.transition};
 
     & + & {
         top: 50%;
@@ -30,6 +32,14 @@ const Mask = styled.span`
 
 const ListItem = styled.li`
     position: relative;
+`
+
+const NavLink = styled(Link)`
+    font-family: Josefin Sans sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    color: transparent;
 
     &::before {
         content: '';
@@ -42,15 +52,15 @@ const ListItem = styled.li`
         right: -10px;
         z-index: 1;
 
-        transform: scale(0%);
+        transform: scale(0);
+        transition: ${theme.animations.transition};
     }
 
-    &:hover {
-        &:hover {
-            &::before {
-                transform: scale(1);
-            }
+    &:hover, &.active {
+        &::before {
+            transform: scale(1);
         }
+
 
         ${Mask} {
             transform: skewX(8deg) translateX(3px);
@@ -61,13 +71,6 @@ const ListItem = styled.li`
             }
         }
     }
-`
-const Link = styled.a`
-    font-family: Josefin Sans sans-serif;
-    font-size: 30px;
-    font-weight: 400;
-    text-align: center;
-    color: transparent;
 `
 
 //mobile
@@ -81,13 +84,12 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     bottom: 0;
     z-index: 9999;
     background-color: rgba(31, 31, 32, 0.9);
-    display: none;
-
-    ${props => props.isOpen && css<{ isOpen: boolean }>`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: 1s ease-in-out;
+    
     ul {
         display: flex;
         gap: 30px;
@@ -95,6 +97,10 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
         flex-direction: column;
         align-items: center;
     }
+    
+    ${props => props.isOpen && css<{ isOpen: boolean }>`
+        transform: translateY(0);
+    `}
 `
 const BurgerButton = styled.button<{ isOpen: boolean }>`
     position: fixed;
@@ -149,7 +155,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 
 export const S = {
     DesktopMenu,
-    Link,
+    NavLink,
     ListItem,
     Mask,
     MobileMenu,

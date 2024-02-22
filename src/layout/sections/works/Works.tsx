@@ -24,7 +24,7 @@ export const Works: React.FC = () => {
     ]
 
     return (
-        <StyledWorks>
+        <StyledWorks id={'Works'}>
             <Container>
                 <SectionTitle>My Works</SectionTitle>
                 <TabMenu menuItems={items}/>

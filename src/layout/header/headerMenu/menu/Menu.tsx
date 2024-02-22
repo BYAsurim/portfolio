@@ -1,28 +1,30 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {S} from '../HeaderMenu_Styles'
 
 
-type MenuPropsType = {
-    menuItems: string[]
-}
-export const Menu: FC<MenuPropsType> = ({
-                         menuItems
-                     }) => {
+const items = ['Home', 'Skills', 'Works', 'Testimony', 'Contacts']
+
+export const Menu: React.FC = () => {
     return (
         <ul>
             {
-                menuItems.map((item, index) => {
+                items.map((item, index) => {
                     return <S.ListItem key={index}>
-                        <S.Link href="">
+                        <S.NavLink
+                            activeClass={'active'}
+                            to={`${item}`}
+                            smooth={true}
+                            spy={true}
+                        >
                             {item}
-                            <S.Mask>
-                                <span>{item} </span>
-                            </S.Mask>
-                            <S.Mask>
-                                <span>  {item}</span>
-                            </S.Mask>
-                        </S.Link>
-                    </S.ListItem>
+                        <S.Mask>
+                            <span>{item} </span>
+                        </S.Mask>
+                        <S.Mask>
+                            <span>  {item}</span>
+                        </S.Mask>
+                    </S.NavLink>
+                </S.ListItem>
                 })
             }
         </ul>

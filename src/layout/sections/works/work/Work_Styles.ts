@@ -33,6 +33,7 @@ const ImageWrapper = styled.div `
         background: rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(4px);
         opacity: 0;
+        transition: ${theme.animations.transition};
     }
 
     &:hover {
@@ -51,6 +52,7 @@ const ImageWrapper = styled.div `
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        transition: ${theme.animations.transition};
 
         &::before {
             width: 100%;
