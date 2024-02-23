@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
-import {SectionTitle} from "../../../components/SectionTitle";
+import {SectionTitle} from "components/SectionTitle";
 import {TabMenu} from "./tabMenu/TabMenu";
-import {FlexWrapper} from "../../../components/FlexWrapper";
+import {FlexWrapper} from "components/FlexWrapper";
 import {Work} from "./work/Work";
 import socialImg from '../../../assets/images/proj1.webp'
-import {Container} from "../../../components/Container";
+import {Container} from "components/Container";
 
 const items = ['All', 'landing page', 'React', 'spa']
 
